@@ -138,3 +138,5 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/winsw
       name: GitHub
+  version:
+    provider: mike
