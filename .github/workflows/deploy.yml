@@ -61,8 +61,8 @@ jobs:
               mkdocs build
             env: |
               FULL_BUILD=true
-              INSIDERS=true
-        
+      - name: Copy Versions Metadata
+        run: cp assets/data/versions.json _site/assets/data/versions.json
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
         uses: actions/upload-pages-artifact@v5
