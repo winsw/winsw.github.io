@@ -22,12 +22,18 @@ exclude_docs: |
 
 nav:
   - Home: v3/index.md
-  - Documentation: v3/README.md
+  - Documentation:
+    - v3: v3/README.md
+    - v2: v2/README.md
   - Manifesto: v3/MANIFEST.md
   - Contributing:
     - Contributing to WinSW: v3/CONTRIBUTING.md
     - Contributing to the website: CONTRIBUTING.md
+    - License: LICENSE.md
 
+not_in_nav: |
+  - versions.json
+  - versions.md
 
 plugins:
   - search
@@ -51,6 +57,9 @@ plugins:
           - name: v3
             import_url: 'https://github.com/winsw/winsw?branch=v3&edit_uri=/blob/v3/'
             imports: [ /* ]
+  - redirects:
+      redirect_maps:
+        'versions.json': '/assets/data/versions.json'
 
 
 # Markdown
@@ -94,7 +103,7 @@ theme:
     # - header.autohide
     # - navigation.expand
     - navigation.footer
-    # NOT compatible qith toc.integrate
+    # NOT compatible with toc.integrate
     # - navigation.indexes
     - navigation.path
     # - navigation.instant
