@@ -21,10 +21,10 @@ exclude_docs: |
   .devcontainer
 
 nav:
-  - Home: v3/index.md
+  - Home: v3/README.md
   - Documentation:
-    - v3: v3/README.md
     - v2: v2/README.md
+    - v3: '!import https://github.com/winsw/winsw?branch=v3'
   - Manifesto: v3/MANIFEST.md
   - Contributing:
     - Contributing to WinSW: v3/CONTRIBUTING.md
