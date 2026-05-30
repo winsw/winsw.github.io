@@ -39,7 +39,7 @@ plugins:
       - multirepo:
           # TODO: Change to True once works
           cleanup: false
-          temp_dir: "winsw-website/.multirepo"
+          temp_dir: "winsw.github.io/.multirepo"
           keep_docs_dir: true
           nav_repos:
           - name: v2
