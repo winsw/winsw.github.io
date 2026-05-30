@@ -22,8 +22,11 @@ exclude_docs: |
 
 nav:
   - Home: v3/index.md
+  - Documentation: v3/README.md
   - Manifesto: v3/MANIFEST.md
-  - Contributing: v3/CONTRIBUTING.md
+  - Contributing:
+    - Contributing to WinSW: v3/CONTRIBUTING.md
+    - Contributing to the website: CONTRIBUTING.md
 
 
 plugins:
