@@ -1,0 +1,140 @@
+site_name: Windows Service Wrapper
+site_description: >-
+  Windows Service Wrapper (WinSW) is a tool to wrap and manage Windows services,
+  providing a simple way to run applications as Windows services.
+copyright: >-
+  Copyright &copy; 2026 - Oleg Nenashev and all WinSW contributors.
+  The content and the license are licensed under CC BY 4.0.<br/>
+repo_url: https://github.com/winsw/winsw.github.io
+repo_name: GitHub Repo
+edit_uri: edit/main/
+site_url: https://winsw.github.io
+
+# Build
+site_dir: _site
+docs_dir: .
+exclude_docs: |
+  .github
+  .git
+  .vscode
+  .multirepo
+  .devcontainer
+
+nav:
+  - Home: v3/index.md
+  - Manifesto: v3/MANIFEST.md
+  - Contributing: v3/CONTRIBUTING.md
+
+
+plugins:
+  - search
+  - autorefs
+  - macros
+  - mkdocs-pdf
+  - social
+  - same-dir
+  - group:
+      enabled: !ENV [FULL_BUILD, true]
+      plugins:
+      - multirepo:
+          # TODO: Change to True once works
+          cleanup: false
+          temp_dir: "winsw-website/.multirepo"
+          keep_docs_dir: true
+          nav_repos:
+          - name: v2
+            import_url: 'https://github.com/winsw/winsw?branch=v2&edit_uri=/blob/v2/'
+            imports: [ /* ]
+          - name: v3
+            import_url: 'https://github.com/winsw/winsw?branch=v3&edit_uri=/blob/v3/'
+            imports: [ /* ]
+
+
+# Markdown
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - toc:
+      permalink: '#'
+  - attr_list
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - mdx_truly_sane_lists
+
+# Theme
+theme:
+  name: material
+  custom_dir: overrides
+  highlightjs: true
+  features:
+    - announce.dismiss
+    - content.action.edit
+    - content.action.view
+    - content.code.annotate
+    - content.code.copy
+    - content.code.select
+    - content.tabs.link
+    - content.tooltips
+    # - header.autohide
+    # - navigation.expand
+    - navigation.footer
+    # NOT compatible qith toc.integrate
+    # - navigation.indexes
+    - navigation.path
+    # - navigation.instant
+    # - navigation.instant.prefetch
+    # - navigation.instant.progress
+    # - navigation.prune
+    - navigation.sections
+    - navigation.expand
+    - navigation.tabs
+    # - navigation.tabs.sticky
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+    - toc.integrate
+  font:
+    text: DM Sans
+    code: Roboto Mono
+  palette:
+    - scheme: default
+      media: "(prefers-color-scheme: light)"
+      primary: custom
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      media: "(prefers-color-scheme: dark)"
+      primary: custom
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  favicon: assets/images/logo/logo.svg
+  logo: assets/images/logo/logo.png
+  icon:
+    repo: fontawesome/brands/github
+
+extra_css:
+  - assets/css/theme.css
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/winsw
+      name: GitHub

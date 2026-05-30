@@ -1,0 +1,130 @@
+{% extends "main.html" %}
+{% block scripts %}
+<link rel=stylesheet href="assets/css/theme.css">
+{% endblock %}
+
+{% block tabs %}
+  {{ super() }}
+
+  <!-- Additional styles for landing page -->
+  <style>
+
+    .md-typeset h1 {
+      font-size: xx-large;
+      font-weight: bolder;
+      margin: unset;
+    }
+
+    /* Application header should be static for the landing page */
+    .md-header {
+      position: initial;
+      display: none;
+    }
+
+    .md-tabs {
+      display: none;
+    }
+
+    /* Remove spacing, as we cannot hide it completely */
+    .md-main__inner {
+      margin: 0;
+    }
+
+    /* Hide main content for now */
+    .md-content {
+      display: none;
+    }
+
+    /* Hide table of contents */
+    @media screen and (min-width: 60em) {
+      .md-sidebar--secondary {
+        display: none;
+      }
+    }
+
+    /* Hide navigation */
+    @media screen and (min-width: 76.25em) {
+      .md-sidebar--primary {
+        display: none;
+      }
+    }
+
+    .mdx-hero {
+      margin-inline: auto;
+    }
+
+    .mdx-hero__image {
+      margin-inline: auto;
+    }
+
+    .mdx-hero__buttons {
+      margin-bottom: 20px;
+
+    }
+
+    .md-button {
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+
+    .mdx-container {
+      max-width: 600px;
+      margin-inline: auto;
+
+      @media screen and (min-height: 60em) {
+        transform: translateY(30%);
+      }
+
+      div {
+        text-align:center;
+      }
+    }
+
+    [data-md-color-scheme="slate"] {
+      .mdx-hero__content {
+        color: var(--theme-white);
+      }
+
+      .mdx-hero__content a {
+        color: var(--theme-main-lite);
+      }
+
+      .mdx-hero__content a:hover {
+        color: var(--theme-light-blue);
+      }
+
+      .md-button {
+        color: var(--theme-white);
+      }
+    }
+  </style>
+
+  <section class="mdx-container">
+    <div class="md-grid md-typeset">
+      <div class="mdx-hero">
+        <div class="mdx-hero__image">
+          <img src="assets/images/logo/logo.png" alt="Windows Service Wrapper logo" width="360" draggable="false">
+        </div>
+        <div class="mdx-hero__content">
+          <h1>Windows Service Wrapper *</h1>
+          <p>{{ config.site_description }}</p>
+        </div>
+        <div class="mdx-hero__buttons">
+          <a href="{{ 'v3/MANIFEST.md' | url }}" title="Manifesto" class="md-button md-button--primary">
+            Manifesto
+          </a>
+          <a href="{{ 'v2/docs' | url }}" title="2.x Docs" class="md-button">
+            v2 Docs
+          </a>
+          <a href="{{ 'v3/docs' | url }}" title="3.x Docs" class="md-button">
+            v3 Docs
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}
+
+{% block content %}
+{% endblock %}
+

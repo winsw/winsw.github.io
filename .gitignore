@@ -1,0 +1,6 @@
+# MkDocs
+.cache
+_site
+temp_dir
+.multirepo
+
